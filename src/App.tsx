@@ -1,19 +1,27 @@
 import * as React from 'react';
+import { Link, Route } from 'react-router-dom';
 import './App.css';
 
-import logo from './logo.svg';
+
+import AddMovie from './components/AddMovie'
+import Search from './components/Search'
 
 class App extends React.Component {
   public render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <nav className="navbar navbar-light">
+            <ul className="nav navbar-nav">
+
+
+                <li><Link to="/My_movies">My movies</Link></li>
+                <li><Link to="/search">/Search</Link></li>
+
+
+            </ul>
+        </nav>
+            <Route path = '/My_movies'component = {AddMovie}/>
+            <Route path = '/Search' component = {Search}/>
       </div>
     );
   }

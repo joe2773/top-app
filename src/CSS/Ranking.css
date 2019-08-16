@@ -1,0 +1,32 @@
+.rank-view-grid-container{
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   padding: 15%;
+}
+.rank-edit-grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+}
+.rank-edit-grid-item {
+
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+
+    font-size: 30px;
+    text-align: center;
+     font-family: "Georgia", serif;
+}
+
+.rank-view-grid-item {
+
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 25px;
+    font-size: 30px;
+    text-align: center;
+    padding:10%;
+     font-family: "Georgia", serif;
+}

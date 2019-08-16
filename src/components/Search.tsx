@@ -1,14 +1,24 @@
 import * as React from 'react';
+import AddMovie from './AddMovie'
+import '/Users/joe/Github/top-app/src/CSS/Grid.css'
+import '/Users/joe/Github/top-app/src/CSS/Search.css'
 interface IMyState  {
     searchTerm: any
     searchData: any
 }
+interface IMyProps {
+    userId: any
+}
 
-class Search extends React.Component<{},IMyState>{
+// This class is the search page of the website, returning search results for a given keyword and allowing users to add search results to their movie list
+
+class Search extends React.Component<IMyProps,IMyState>{
 
 
     public constructor(props:any){
+
         super(props)
+
         this.state = {
             searchTerm:'',
             searchData: []
@@ -18,17 +28,26 @@ class Search extends React.Component<{},IMyState>{
 
     }
     public fetchIMDBdata(){
+
         const apiKey = 'a0163dd3'
-        let apiURL = 'http://www.omdbapi.com/?apikey='+apiKey
+
+        let apiURL = 'https://www.omdbapi.com/?apikey='+apiKey
         apiURL = apiURL+'&s='+this.state.searchTerm
         console.log(apiURL)
         fetch(apiURL)
         .then(response=>response.json())
         .then(data=>{
-            this.setState({
-                searchData: data.Search
-            })
-            console.log(data.Search[0].Poster)
+
+            if(data.Search !== undefined){
+                this.setState({
+                    searchData: data.Search
+                })
+            } else {
+                alert('movie not found')
+            }
+        })
+        .catch(error => {
+            console.log(error)
         })
 
     }
@@ -40,28 +59,36 @@ class Search extends React.Component<{},IMyState>{
         })
 
     }
+
     public render(){
         return(
             <div>
-                <input name = 'searchInput'type = 'text' placeholder= 'search' onChange = {this.setSearchRequestParams}/>
-                <input type = 'submit' value = 'go' onClick = {this.fetchIMDBdata}/>
 
-                <ul>
+                <div className = 'search-grid-container'>
+                    <div className = 'search-grid-item'>
+                        <input id = 'searchInput' name = 'searchInput'type = 'text' placeholder= 'search' onChange = {this.setSearchRequestParams}/>
+                        <input type = 'submit' value = 'go' onClick = {this.fetchIMDBdata}/>
+                    </div>
+                </div>
+
+                <div className = 'grid-container'>
                 {this.state.searchData.map((searchMovie :any)=> (
-                    <div key = {searchMovie.imdbID}>
-                    <li>
+                    <div className = 'grid-item' key = {searchMovie.imdbID}>
+
                      {searchMovie.Title}
-                     </li>
-                     <li>
+
+
                       <img src = {searchMovie.Poster}/>
-                     </li>
+
+                     <AddMovie userId = {this.props.userId} movieName = {searchMovie.Title} year = {searchMovie.Year} posterURL = {searchMovie.Poster}/>
                     </div>
 
                 ))}
-                </ul>
+                </div>
             </div>
 
         )
     }
 }
+
 export default Search;

@@ -4,7 +4,7 @@ import * as React from 'react';
 import DeleteMovie from './DeleteMovie'
 import Rating from './Rating'
 
-import '/Users/joe/Github/top-app/src/CSS/Grid.css'
+// import '/Users/joe/Github/top-app/src/CSS/Grid.css'
 
 interface IMyState  {
     myMovieArray: any[]

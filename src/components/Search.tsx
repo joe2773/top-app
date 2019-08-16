@@ -1,7 +1,7 @@
 import * as React from 'react';
 import AddMovie from './AddMovie'
-// import '/Users/joe/Github/top-app/src/CSS/Grid.css'
-// import '/Users/joe/Github/top-app/src/CSS/Search.css'
+import '/Users/joe/Github/top-app/src/CSS/Grid.css'
+import '/Users/joe/Github/top-app/src/CSS/Search.css'
 interface IMyState  {
     searchTerm: any
     searchData: any

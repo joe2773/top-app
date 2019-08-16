@@ -1,7 +1,7 @@
 import * as React from 'react'
 import EditMovieRankItem from './EditMovieRankItem'
 import MovieRankItem from './MovieRankItem'
-// import '/Users/joe/Github/top-app/src/CSS/Ranking.css'
+ import '/Users/joe/Github/top-app/src/CSS/Ranking.css'
 interface IMyState {
     rankedMoviesArray: any[],
     isEditingMode: any,

@@ -60,7 +60,7 @@ class App extends React.Component<{},IAppState> {
      if(this.state.isLoggedIn){
     return (
       <div id = 'top-background' className = "app">
-      <div>logo</div>
+      <img className = 'logo'src = "https://topphoto.blob.core.windows.net/topphoto/Top-Logo%20copy.jpeg"/>
         <nav className="nav-grid-container">
                 <ul className = 'nav-grid-item'><Link to="/Search">Search</Link></ul>
                 <ul className = 'nav-grid-item' ><Link to="/Home">  Profile </Link></ul>

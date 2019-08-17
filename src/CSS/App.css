@@ -4,6 +4,14 @@
     background-repeat: repeat;
     background-size: cover;
     background-attachment: fixed;
-    
 
+
+}
+
+.logo {
+    height:75px;
+    width:75px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

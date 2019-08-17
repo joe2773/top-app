@@ -7,8 +7,8 @@ import Login from './components/Login'
 import Search from './components/Search'
 import TopTen from './components/TopTen'
 
- import './CSS/App.css'
- import './CSS/NavBar.css'
+ // import './CSS/App.css'
+ // import './CSS/NavBar.css'
 
 interface IAppState {
     isLoggedIn:any,

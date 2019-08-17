@@ -1,5 +1,5 @@
 import * as React from 'react'
- import '/Users/joe/Github/top-app/src/CSS/Ranking.css'
+ import '../CSS/Ranking.css'
 interface IMyProps {
     rankedMovie: any,
     userId:any,

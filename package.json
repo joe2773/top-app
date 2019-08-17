@@ -4,7 +4,10 @@
   "private": true,
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.1.1",
+    "@types/react-router-dom": "^4.3.4",
+    "ajv": "^6.10.2",
     "axios": "^0.19.0",
+    "jest": "^24.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-facebook": "^8.0.4",
@@ -20,7 +23,7 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.16",
+    "@types/jest": "^24.0.17",
     "@types/node": "^12.6.9",
     "@types/react": "^16.8.24",
     "@types/react-dom": "^16.8.5",
